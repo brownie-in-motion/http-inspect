@@ -4,7 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const { promisify } = require('util');
 
-class httpServer {
+class HttpServer {
     routes = [];
     constructor (dir) {
         this.app = express();
@@ -33,4 +33,4 @@ class httpServer {
     listen = (port) => promisify(this.app.listen).bind(this.app)(port);
 }
 
-module.exports = httpServer;
+module.exports = HttpServer;
